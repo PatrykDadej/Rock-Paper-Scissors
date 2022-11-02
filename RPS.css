@@ -11,8 +11,8 @@ h1 {
     font-family: 'Cabin Sketch', cursive;
     font-size:90px;
     font-weight: 700;
-    margin: 10px;
-    padding: 5%;
+    margin: 10px 0px;
+    padding: 0;
     color: #61764B;
     
 }
@@ -23,9 +23,8 @@ p.desc {
     text-align: center;
 }
 
-
 /* CSS */
-#rocky,#papery,#scissorsy {
+#rocky,#papery,#scissors,.playAgain {
   background-color: #9BA17B;
   border: 0 solid #E5E7EB;
   box-sizing: border-box;
@@ -50,20 +49,21 @@ p.desc {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-#scissorsy {
+#scissors {
     transform: rotate(-4deg);
 }
 #papery {
     transform: rotate(2deg);
 }
 
-#rocky:focus,#papery:focus,#scissorsy:focus {
+#rocky:focus,#papery:focus,#scissors:focus,.playAgain {
   outline: 0;
 }
 
 #rocky:after,
 #papery:after,
-#scissorsy:after {
+#scissors:after,
+.playAgain:after {
   content: '';
   position: absolute;
   border: 1px solid #000000;
@@ -75,7 +75,8 @@ p.desc {
 
 #rocky:hover:after,
 #papery:hover:after,
-#scissorsy:hover:after {
+#scissors:hover:after,
+.playAgain:hover:after {
   bottom: 2px;
   left: 2px;
 }
