@@ -1,5 +1,5 @@
 html {
-    background:#FAD6A5;
+  background:#FAD6A5;
 }
 .main {
   display:flex;
@@ -8,22 +8,21 @@ html {
 }
 
 h1 {
-    font-family: 'Cabin Sketch', cursive;
-    font-size:90px;
-    font-weight: 700;
-    margin: 10px 0px;
-    padding: 0;
-    color: #61764B;
+  font-family: 'Cabin Sketch', cursive;
+  font-size:90px;
+  font-weight: 700;
+  margin: 10px 0px;
+  padding: 0;
+  color: #61764B;
     
 }
 p.desc {
-    color:#61764B;
-    padding:0% 15%;
-    font-family: 'Fuzzy Bubbles', cursive;
-    text-align: center;
+  color:#61764B;
+  padding:0% 15%;
+  font-family: 'Fuzzy Bubbles', cursive;
+  text-align: center;
 }
 
-/* CSS */
 #rocky,#papery,#scissors,.playAgain {
   background-color: #9BA17B;
   border: 0 solid #E5E7EB;
@@ -50,10 +49,10 @@ p.desc {
   touch-action: manipulation;
 }
 #scissors {
-    transform: rotate(-4deg);
+  transform: rotate(-4deg);
 }
 #papery {
-    transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 
 #rocky:focus,#papery:focus,#scissors:focus,.playAgain {
@@ -89,8 +88,8 @@ p.desc {
 }
 
 .buttonsDiv {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 
 }
 
