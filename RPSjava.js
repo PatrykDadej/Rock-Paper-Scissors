@@ -16,39 +16,42 @@ function getComputerSelection() {
 /* Checks after each round if either Human or Computer reached score of 5
 and finished the game if so */
 function checkIfEnd(){
-  if (humanScore >=5 || computerScore >=5){
+  if (humanScore >= 5 || computerScore >= 5){
     update.style.fontSize = "50px"
-    if (humanScore>computerScore){
+    if (humanScore > computerScore){
       update.textContent = "Victory !"
     }
-    else if (computerScore>humanScore){
+    else if (computerScore > humanScore){
       update.textContent = "Defeat"    
     }
-  mainSelector.appendChild(playAgain)
-  theGameDivSelector.removeChild(buttonsDivSelector)
-  theGameDivSelector.removeChild(currentScoreHeaders)
-  theGameDivSelector.removeChild(currentScore)
-  humanScore=0
-  computerScore=0
+    mainSelector.appendChild(playAgain)
+    theGameDivSelector.removeChild(buttonsDivSelector)
+    theGameDivSelector.removeChild(currentScoreHeaders)
+    theGameDivSelector.removeChild(currentScore)
+    humanScore = 0
+    computerScore = 0
   }
 }
 /* The main logic engine*/
-function scoreChecker(currentHuman,currentComputer){
-    update.style.fontSize = "17px"
-    if ((currentHuman === "Rock" && currentComputer=== "Paper") || (currentHuman === "Paper" && currentComputer=== "Scissors") || (currentHuman === "Scissors" && currentComputer=== "Rock")) {
-        computerScore++
-        update.textContent = `You lost this round, ${currentComputer} beats ${currentHuman}`
-        currentScoreHeaders.textContent = "Current Score Is:"
-        currentScore.textContent = `${humanScore} - ${computerScore}`
-    }   else if ((currentHuman==="Rock" && currentComputer=== "Scissors") || (currentHuman==="Scissors" && currentComputer=== "Paper") || (currentHuman==="Paper" && currentComputer=== "Rock")) {
-        humanScore++
-        update.textContent =`You Won this round, ${currentHuman} beats ${currentComputer}`
-        currentScoreHeaders.textContent = "Current Score Is:"
-        currentScore.textContent = `${humanScore} - ${computerScore}`
-    }   else if ((currentHuman==="Scissors" && currentComputer==="Scissors") || (currentHuman==="Rock" && currentComputer==="Rock") || (currentHuman==="Paper" && currentComputer==="Paper")){
-        update.textContent ="Round finished with draw"}
-        currentScoreHeaders.textContent = "Current Score Is:"
-        currentScore.textContent = `${humanScore} - ${computerScore}`
+function scoreChecker(currentHuman, currentComputer){
+  update.style.fontSize = "17px"
+  if ((currentHuman === "Rock" && currentComputer === "Paper") || (currentHuman === "Paper" && currentComputer === "Scissors") || (currentHuman === "Scissors" && currentComputer === "Rock")) {
+    computerScore++
+    update.textContent = `You lost this round, ${currentComputer} beats ${currentHuman}`
+    currentScoreHeaders.textContent = "Current Score Is:"
+    currentScore.textContent = `${humanScore} - ${computerScore}`
+  }   
+  else if ((currentHuman === "Rock" && currentComputer === "Scissors") || (currentHuman === "Scissors" && currentComputer === "Paper") || (currentHuman === "Paper" && currentComputer === "Rock")) {
+    humanScore++
+    update.textContent =`You Won this round, ${currentHuman} beats ${currentComputer}`
+    currentScoreHeaders.textContent = "Current Score Is:"
+    currentScore.textContent = `${humanScore} - ${computerScore}`
+  }   
+  else if ((currentHuman === "Scissors" && currentComputer === "Scissors") || (currentHuman === "Rock" && currentComputer === "Rock") || (currentHuman === "Paper" && currentComputer === "Paper")){
+    update.textContent ="Round finished with draw"
+    currentScoreHeaders.textContent = "Current Score Is:"
+    currentScore.textContent = `${humanScore} - ${computerScore}`
+  }
 }
 
 const mainSelector = document.querySelector('.main')
@@ -66,7 +69,6 @@ currentScore.classList.add("currentScore")
 
 const playAgain = document.createElement('button')
 playAgain.classList.add("playAgain")
-
 playAgain.textContent = "Play Again"
 playAgain.addEventListener("click",() =>{
   theGameDivSelector.appendChild(buttonsDivSelector)
@@ -78,18 +80,18 @@ playAgain.addEventListener("click",() =>{
 
 const rockButton = document.createElement('button')
 rockButton.classList.add("option")
-rockButton.textContent="Rock"
-rockButton.setAttribute('id',"rocky")
+rockButton.textContent = "Rock"
+rockButton.setAttribute('id', "rocky")
 
 const paperButton = document.createElement('button')
 paperButton.classList.add("option")
 paperButton.textContent="Paper"
-paperButton.setAttribute('id',"papery")
+paperButton.setAttribute('id', "papery")
 
 const scissorsButton = document.createElement('button')
 scissorsButton.classList.add("option")
-scissorsButton.textContent="Scissors"
-scissorsButton.setAttribute('id',"scissors")
+scissorsButton.textContent = "Scissors"
+scissorsButton.setAttribute('id', "scissors")
 
 buttonsDivSelector.appendChild(rockButton)
 buttonsDivSelector.appendChild(paperButton)
@@ -109,5 +111,5 @@ buttonsDivSelector.appendChild(scissorsButton)
       theGameDivSelector.appendChild(currentScore)
       currentScoreHeaders.style.fontFamily = 'Fuzzy Bubbles'
       checkIfEnd()
-})
-})
+    })
+  })
